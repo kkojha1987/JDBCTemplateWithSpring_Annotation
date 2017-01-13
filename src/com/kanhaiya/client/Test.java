@@ -18,9 +18,9 @@ EmployeeService empService=context.getBean("employeeService", EmployeeServiceImp
 //createEmployee(empService);
 //getEmployeeServiceById(empService);
 
-//fetchAllEmployee(empService);
+fetchAllEmployee(empService);
 //updateEmployeeEmail(empService);
-//empService.deleteEmployeeById(8);
+//empService.deleteEmployeeById(102);
 context.close();
 	}
 

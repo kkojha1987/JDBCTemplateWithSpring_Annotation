@@ -14,13 +14,16 @@ import com.kanhaiya.model.Employee;
 
 public class EmployeeDaoImpl implements EmployeeDao {
 
-	private DataSource dataSource;
+	//private DataSource dataSource;
 	
 	private JdbcTemplate jdbcTemplate;
 	
-	public void setDataSource(DataSource dataSource) {
+	/*public void setDataSource(DataSource dataSource) {
 		this.dataSource = dataSource;
 		jdbcTemplate=new JdbcTemplate(dataSource);
+	}*/
+	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+		this.jdbcTemplate = jdbcTemplate;
 	}
 	/*
 	@Override
