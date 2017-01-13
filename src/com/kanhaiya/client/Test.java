@@ -18,12 +18,22 @@ EmployeeService empService=context.getBean("employeeService", EmployeeServiceImp
 //createEmployee(empService);
 //getEmployeeServiceById(empService);
 
-List<Employee> list=empService.getAllEmployee();
-for(Employee emp : list)
-{
-	System.out.println(emp.getEmployeeId()+"\t" +emp.getEmployeeName());
-}
+//fetchAllEmployee(empService);
+//updateEmployeeEmail(empService);
+//empService.deleteEmployeeById(8);
 context.close();
+	}
+
+	public static void updateEmployeeEmail(EmployeeService empService) {
+		empService.updateEmployeeEmailByid("msn@gmail.com", 2);
+	}
+
+	public static void fetchAllEmployee(EmployeeService empService) {
+		List<Employee> list=empService.getAllEmployee();
+		for(Employee emp : list)
+		{
+			System.out.println(emp.getEmployeeId()+"\t" +emp.getEmployeeName());
+		}
 	}
 
 	public static void getEmployeeServiceById(EmployeeService empService) {

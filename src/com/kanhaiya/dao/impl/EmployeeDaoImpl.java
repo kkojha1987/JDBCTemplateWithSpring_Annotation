@@ -66,14 +66,22 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
 	@Override
 	public void deleteEmployeeById(int employeeId) {
-		// TODO Auto-generated method stub
 
+String sql="delete from employee_table where employee_id=?";
+int update=jdbcTemplate.update(sql, employeeId);
+if(update>0)
+{
+	System.out.println("Deleted");
+}
 	}
 
 	@Override
 	public void updateEmployeeEmailByid(String newEmail, int employeeId) {
-		// TODO Auto-generated method stub
 
+		String sql="update employee_table set email=? where employee_id=?";
+		int update=jdbcTemplate.update(sql, newEmail,employeeId);
+		if(update>0) 
+			System.out.println("Email updated");
 	}
 
 	@Override
