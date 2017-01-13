@@ -6,6 +6,8 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
 
+<context:component-scan base-package="com.kanhaiya.dao.impl"></context:component-scan>
+<context:component-scan base-package="com.kanhaiya.service.impl"></context:component-scan>
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="${db.driverClassName}"></property>
@@ -14,15 +16,15 @@
 		<property name="password" value="${db.password}"></property>
 	</bean>
 
-	<bean id="employeeService" class="com.kanhaiya.service.impl.EmployeeServiceImpl">
+	<!--<bean id="employeeService" class="com.kanhaiya.service.impl.EmployeeServiceImpl">
 		<property name="employeeDao" ref="employeeDao"></property>
-	</bean>
+	</bean>-->
 	<!--<bean id="employeeDao" class="com.kanhaiya.dao.impl.EmployeeDaoImpl">
 		<property name="dataSource" ref="dataSource"></property>
 	</bean>-->
-	<bean id="employeeDao" class="com.kanhaiya.dao.impl.EmployeeDaoImpl">
+	<!--<bean id="employeeDao" class="com.kanhaiya.dao.impl.EmployeeDaoImpl">
 		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
-	</bean>
+	</bean>-->
 	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
 	<constructor-arg name="dataSource" ref="dataSource"></constructor-arg>
 	</bean>

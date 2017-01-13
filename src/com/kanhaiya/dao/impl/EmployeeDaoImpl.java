@@ -7,15 +7,17 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
 import com.kanhaiya.dao.EmployeeDao;
 import com.kanhaiya.model.Employee;
-
+@Repository
 public class EmployeeDaoImpl implements EmployeeDao {
 
 	//private DataSource dataSource;
-	
+	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	
 	/*public void setDataSource(DataSource dataSource) {
